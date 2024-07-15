@@ -1,16 +1,36 @@
-# qizzapp
+# Quiz App
 
-A new Flutter project.
+It is a simple quiz app built with Flutter that tests your knowledge with true/false questions.
+
+## Features
+
+- Multiple true/false questions
+- Score tracking
+- Reset functionality
+
+## Screenshots!
+
+<img src="screenshots/screenshot1.png" alt="Screenshot 1" width="400" />
+<img src="screenshots/screenshot2.png" alt="Screenshot 1" width="400" />
+<img src="screenshots/screenshot3.png" alt="Screenshot 1" width="400" />
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run this project locally, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone this repository.
+2. Open the project in your preferred IDE (e.g., Android Studio, VS Code).
+3. Ensure Flutter is set up and configured correctly.
+4. Run the app on a simulator/emulator or a physical device.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Usage
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Answer each question by tapping either the True or False button.
+- View your score and see icons indicating correct (✔️) or incorrect (❌) answers.
+- Once all questions are answered, the quiz resets automatically.
+
+## Dependencies
+
+- rflutter_alert: ^1.0.3
+
+
