@@ -36,4 +36,16 @@ class QuizBrain {
     return _questionBank[_questionNumber].questionAnswer;
   }
 
+   isFinished(){
+    if( _questionNumber >= _questionBank.length -1){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  reset(){
+    return _questionNumber = 0;
+  }
+
 }
