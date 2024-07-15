@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qizzapp/question.dart';
-import 'question.dart';
+import 'quiz_brain.dart';
+
+QuizBrain quizBrain = QuizBrain();
 
 void main() => runApp(Quizzler());
 
@@ -31,14 +32,6 @@ class _QuizPageState extends State<QuizPage> {
 
   List<Widget> scoreKeeper = [];
 
-  List<Question> questionBank = [
-    Question(questionText: 'You can lead a cow down stairs but not up stairs.', questionAnswer: false),
-    Question(questionText: 'Approximately one quarter of human bones are in the feet.', questionAnswer: true),
-    Question(questionText: 'A slug\'s blood is green.', questionAnswer: true)
-  ];
-
-  int currentQuestionIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -51,7 +44,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questionBank[currentQuestionIndex].questionText,
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -78,7 +71,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = questionBank[currentQuestionIndex].questionAnswer;
+                bool correctAnswer = quizBrain.getQuestionAnswer();
 
                 if (correctAnswer == true){
                   scoreKeeper.add(
@@ -97,7 +90,7 @@ class _QuizPageState extends State<QuizPage> {
                 }
 
                 setState(() {
-                  currentQuestionIndex++;
+                  quizBrain.nextQuestion();
                 });
               },
             ),
@@ -119,7 +112,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
 
-                bool correctAnswer = questionBank[currentQuestionIndex].questionAnswer;
+                bool correctAnswer = quizBrain.getQuestionAnswer();
 
                 if (correctAnswer == false){
                   scoreKeeper.add(
@@ -137,7 +130,7 @@ class _QuizPageState extends State<QuizPage> {
                   );
                 }
                 setState(() {
-                  currentQuestionIndex++;
+                  quizBrain.nextQuestion();
                 });
               },
             ),
